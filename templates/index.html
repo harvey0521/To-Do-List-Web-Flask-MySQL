@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待辦清單</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/to-do-list.png') }}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class ="ID">
+            <small>
+                <p id="userIdDisplay"></p>
+            </small>
+        </div>
+        <h2 class="home">我的待辦清單</h2>
+        <div class="inputText">
+            <input type="text" id="taskInput" placeholder="輸入任務">
+        </div>
+        <button id="addButton">
+            <div class="text">加入</div>
+            <i class="fa-solid fa-rocket rocket-icon"></i>
+        </button>
+        <!-- <button onclick="localStorage.clear()">清除所有 localStorage</button> -->
+        <ul id="taskList">
+            <i class="fa-solid fa-trash delete-icon"></i>
+
+        </ul>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

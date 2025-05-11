@@ -1,0 +1,635 @@
+@import url('https://fonts.googleapis.com/css2?family=Klee+One&display=swap');
+
+body {
+    background-image: url('images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.loginContainer {
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+h2 {
+    color: #fff;
+    font-family: Klee One;
+    font-size: 55px;
+    white-space: nowrap;
+    margin: 40px;
+    margin-top: 35px;
+}
+
+.inputId {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    border: none;
+    border-radius: 15px;
+    margin-bottom: 40px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.inputId::after {
+    content: "";
+    height: 2px;
+    width: 0%;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: 0%;
+    /* 貼到左下 */
+    left: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+
+.inputId:hover::after {
+    width: 100%;
+}
+
+#user_id {
+    width: 250px;
+    font-family: Klee One;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.4);
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+}
+
+#user_id:focus {
+    outline: none;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4),
+        inset 3px 3px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+
+#startButton {
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    padding: 10px 40px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+}
+
+.start_text {
+    color: #fff;
+    font-family: Klee One;
+    font-size: 15px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+}
+
+#startButton::after {
+    content: "Go ～ ";
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(50px);
+    font-family: Klee One;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+
+#startButton:hover {
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.8),
+        /* 更深的內凹陰影 */
+        inset -2px -2px 8px rgba(255, 255, 255, 0.3);
+    /* 更亮的邊緣高光 */
+}
+
+
+#startButton:hover .start_text {
+    transform: translateY(-50px) scale(0) rotate(120deg);
+}
+
+#startButton:hover::after {
+    transform: translateY(0) scale(1.2);
+}
+
+#startButton:active::after {
+    transform: translateX(-100%) scale(0.95);
+    opacity: 0;
+}
+
+.explanation {
+    color: #fff
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.explanation ol li {
+    margin-top: 10px;
+}
+
+.container {
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ID {
+    position: relative;
+    color: #fff;
+}
+
+.ID::before {
+    content: "ID";
+    height: 35px;
+    width: 120px;
+    background-color: transparent;
+    backdrop-filter: blur(8px);
+    position: absolute;
+    border-radius: 15px;
+    top: 10%;
+    left: 8%;
+    /* top: 19%;
+    left: -40%; */
+    transform: translateY(0px) scale(1.2);
+    font-weight: 400;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+}
+
+.ID:hover::before {
+    transform: translateY(-50px) scale(1.2);
+    opacity: 0;
+}
+
+#userIdDisplay {
+    box-sizing: border-box;
+    background-color: transparent;
+    height: 42px;
+    width: 144px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.ID:hover #userIdDisplay {
+    transform: scale(1.5);
+    opacity: 1;
+}
+
+.home {
+    color: #fff;
+    font-family: Klee One;
+    font-size: 55px;
+    white-space: nowrap;
+    padding: none;
+    margin: 40px;
+    margin-bottom: 45px;
+    margin-top: 0px;
+}
+
+.inputText {
+    position: relative;
+    background-color: transparent;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.inputText::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+.inputText:hover::after {
+    width: 100%;
+}
+
+#taskInput {
+    width: 225px;
+    border: none;
+    font-family: Klee One;
+    font-size: 1rem;
+    padding: 10px 15px;
+    color: rgba(255, 255, 255, 0.4);
+    background-color: transparent;
+    box-sizing: border-box;
+    border-radius: 15px;
+    transition: width 0.5s ease-in-out
+}
+
+
+#taskInput:focus {
+    outline: none;
+    height: 50px;
+    width: 300px;
+    border-radius: 15px;
+    background-color: transparent;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4),
+        inset 3px 3px 10px rgba(0, 0, 0, 1),
+        inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+#addButton {
+    position: relative;
+    background-color: transparent;
+    padding: 10px 45px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    overflow: hidden;
+}
+
+.rocket-icon {
+    color: #fff;
+    position: absolute;
+    left: 20%;
+    top: 100%;
+    font-size: 15px;
+    opacity: 0;
+}
+
+
+#addButton:hover .rocket-icon {
+    animation: slide-up-right 1s ease-in-out infinite;
+    /*@keyframes*/
+}
+
+
+#addButton:hover {
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.8),
+        /* 更深的內凹陰影 */
+        inset -2px -2px 8px rgba(255, 255, 255, 0.3);
+    /* 更亮的邊緣高光 */
+}
+
+
+
+#addButton:active {
+    transform: scale(0.95);
+}
+
+
+.text {
+    color: #fff;
+    font-family: Klee One;
+    font-size: 15px;
+    font-weight: 700;
+    display: inline-block;
+    transition: all 1s;
+}
+
+#addButton:hover .text {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+#addButton:active .text {
+    color: rgba(255, 255, 255, 0.4);
+    transform: scale(0.95);
+}
+
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#taskList li {
+    color: #fff;
+    font-family: Klee One;
+    background-color: transparent;
+    width:  250px;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+#taskList li.finished {
+    text-decoration: line-through;
+    color: #888;
+}
+
+#taskList li button {
+    position: relative;
+    padding: 5px 15px;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+        -1px -1px 6px rgba(255, 255, 255, 0.4);
+    transition: all 1s;
+}
+
+.delete-text {
+    color: #fff;
+    font-family: Klee One;
+    font-size: 15px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+#taskList li button:hover .delete-text {
+    transform: translateX(-50px) scale(0.95);
+    opacity: 0;
+}
+
+.delete-icon {
+    color: #fff;
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    transform: translateX(150%);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+}
+
+
+#taskList li button:hover .delete-icon {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+#taskList li button:hover {
+    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.8),
+        /* 更深的內凹陰影 */
+        inset -2px -2px 8px rgba(255, 255, 255, 0.3);
+    /* 更亮的邊緣高光 */
+}
+
+#taskList li button:active .delete-icon {
+    transform: scale(0.5);
+    opacity: 0.3;
+}
+
+@keyframes slide-up-right {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: translate(30px, -30px) scale(1.5);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(70px, -70px);
+        opacity: 0
+    }
+}
+
+@media (max-width: 600px) {
+
+    .loginContainer {
+        padding: 20px;
+        width: 80%;
+    }
+
+    h2 {
+        font-size: 45px;
+        margin: 30px;
+        margin-bottom: 30px;
+    }
+
+    .inputId {
+        margin-bottom: 30px;
+    }
+
+    #user_id {
+        width: 200px;
+    }
+
+    #startButton:active {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #startButton::after {
+        opacity: 0;
+    }
+
+    #startButton:hover .start_text {
+        transform: none
+    }
+
+    .start_text {
+        transition: all 0.3s ease-in-out;
+    }
+
+    #startButton:active .start_text {
+        transform: translateY(-50px) scale(0) rotate(120deg);
+    }
+
+    .subtitle {
+        margin-top: 30;
+    }
+
+    .explanation ol {
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 30px;
+        padding-right: 15px;
+    }
+
+    .explanation ol li {
+        padding-left: 5px;
+    }
+
+    .container {
+        padding: 20px;
+        width: 80%;
+    }
+
+    .home {
+        font-size: 40px;
+        font-weight: 700;
+    }
+
+    #taskInput {
+        width: 200px;
+        transition: width 0.5s ease-in-out
+    }
+
+    #taskInput:focus {
+        height: 45px;
+        width: 225px;
+    }
+
+    #addButton:active {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #addButton:hover {
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+            -1px -1px 6px rgba(255, 255, 255, 0.4);
+    }
+
+    #addButton:hover .rocket-icon {
+        animation: slide-up-right 1s ease-in-out 1;
+    }
+
+
+    #addButton:hover .text {
+        opacity: 1;
+    }
+
+    #addButton:active .text {
+        transition: 0s;
+        transform: scale(0);
+    }
+
+    #taskList li {
+        width: 200px;
+        padding: 5px;
+    }
+
+    .delete-text {
+        transition: none;
+    }
+
+    .delete-icon {
+        transition: none;
+    }
+
+    #taskList li button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 25px;
+        font-size: 10px;
+    }
+
+    #taskList li button:active .delete-icon {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .loginContainer {
+        padding: 20px;
+        width: 60%;
+    }
+
+    #user_id {
+        width: 230px;
+    }
+
+    #startButton:active {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #startButton::after {
+        opacity: 0;
+    }
+
+    #startButton:hover .start_text {
+        transform: none
+    }
+
+    .start_text {
+        transition: all 0.3s ease-in-out;
+    }
+
+    #startButton:active .start_text {
+        transform: translateY(-50px) scale(0) rotate(120deg);
+    }
+
+    #addButton:active {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    #addButton:hover {
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+            -1px -1px 6px rgba(255, 255, 255, 0.4);
+    }
+
+    #addButton:hover .rocket-icon {
+        animation: slide-up-right 1s ease-in-out 1;
+    }
+
+    #addButton:hover .text {
+        opacity: 1;
+    }
+
+    #addButton:active .text {
+        transition: 0s;
+        transform: scale(0);
+    }
+
+    .delete-text {
+        transition: none;
+    }
+
+    .delete-icon {
+        transition: none;
+    }
+
+    #taskList li button:active .delete-icon {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+}

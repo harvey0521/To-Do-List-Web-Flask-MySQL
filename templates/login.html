@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入代辦清單</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='to-do-list.png') }}" type="image/png">
+</head>
+
+<body>
+    <div class="loginContainer">
+        <h2>使用者名稱</h2>
+        <div class="inputId">
+            <input type="text" id="user_id" placeholder="Username">
+        </div>
+        <!-- <button onclick="start()">開始</button> -->
+        <button id="startButton">
+            <div class="start_text">登入</div>
+        </button>
+
+        <small class="explanation">
+            <p class="subtitle">簡單說明</p>
+            <ol>
+                <li>請輸入使用者名稱（若未輸入系統會自動分配一組暱稱給您）</li>
+                <li>下次輸入使用者名稱，可延續之前的待辦清單</li>
+            </ol>
+        </small>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
