@@ -115,7 +115,7 @@ def update_task(task_id):
         cursor.close() #關閉操作
         conn.close()   #關閉連線
         task['finished'] = is_finished # 更新任務資訊
-        print(f'✔️  完成了{task['text']}任務')
+        print(f'✔️  完成了{task["text"]}任務')
         return jsonify(task),200 
     # return jsonify({"error": "Task not found"}), 404    #js刪除按鈕沒阻止冒泡，如果按過完成再刪除會顯示沒有任務
 
