@@ -15,6 +15,7 @@ def get_db():
         user = os.getenv('DB_USER'),
         password = os.getenv('DB_PASSWORD'),
         database = os.getenv('DB_NAME'),
+        mysql_url = os.getenv("MYSQL_URL")
     )
 
     
