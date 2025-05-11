@@ -103,7 +103,7 @@ if (taskList) {         //主頁才有的元素，才做以下的事
                 },
                 body: JSON.stringify({
                     "user_id": id,  // 這是從 localStorage 讀取的 ID
-                    'text': text
+                    "text": text
                 })  //把資料轉成 JSON 字串送去後端（用 JSON.stringify()）
             })
                 .then(function (response) {
