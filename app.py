@@ -2,6 +2,7 @@ from flask  import Flask, jsonify, request, render_template, Response
 from dotenv import load_dotenv
 import os
 import mysql.connector
+from urllib.parse import urlparse
 import json
 
 app = Flask(__name__)
@@ -10,14 +11,27 @@ app = Flask(__name__)
 load_dotenv()
 
 def get_db():
-    return mysql.connector.connect(
-        host = os.getenv('DB_HOST'),
-        user = os.getenv('DB_USER'),
-        password = os.getenv('DB_PASSWORD'),
-        database = os.getenv('DB_NAME'),
-        mysql_url = os.getenv("MYSQL_URL"),
-        port=int(os.getenv("DB_PORT", 34807))
-    )
+    mysql_url = os.getenv("DB_URL")
+
+    if mysql_url:
+        # 如果 DB_URL 存在，則解析 DB_URL 並連接雲端資料庫
+        parsed_url = urlparse(mysql_url)
+        return mysql.connector.connect(
+            host = parsed_url.hostname,  # 主機名稱（雲端提供的資料庫地址）
+            port = parsed_url.port,  # 端口
+            user = parsed_url.username,  # 用戶名
+            password = parsed_url.password,  # 密碼
+            database = parsed_url.path.lstrip('/'),  # 資料庫名稱
+        )
+    
+    else:
+        # 如果沒有 DB_URL，就使用本地資料庫設定
+        return mysql.connector.connect(
+            host = os.getenv('DB_HOST'),
+            user = os.getenv('DB_USER'),
+            password = os.getenv('DB_PASSWORD'),
+            database = os.getenv('DB_NAME')
+        )
 
     
 #確認有沒有找到我todo_app 資料庫裡手動建立的 tasks 資料表，如沒有就自動再創一個叫 tasks 資料表
