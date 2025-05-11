@@ -146,7 +146,7 @@ def delete_task(task_id):   #task_id 是傳進來的參數，代表「要刪掉�
         f"{task['text']}任務":'已刪除'    #字典 # 買牛奶 : "deleted"
     }
     json_response = json.dumps(response)    #使用 dumps 將 Python 字典轉換成 JSON 字串
-    print(f'🔴 {task['text']}結束了')
+    print(f'🔴 {task["text"]}結束了')
     return Response(json_response,status=200, mimetype='application/json') 
 
 if __name__ == '__main__':  #確保只有當這個檔案是直接執行時，才會執行後面的 
