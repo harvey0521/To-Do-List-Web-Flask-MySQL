@@ -21,6 +21,10 @@
 - **MySQL**：儲存使用者任務資料，支援不同裝置存取。
 
 - **python-dotenv**：安全管理資料庫帳密資訊（透過 .env 檔案）
+  
+- **Render**：使用 Render 雲端部屬
+
+- **Railway**：提供雲端 MySQL 資料庫服務
 
 <br>
 
@@ -54,37 +58,6 @@
 
 <br>
 
-## 運行專案
-
-### 1. 安裝相依套件
-
-```bash
-pip install -r requirements.txt
-```
-
-### 2. 設定 MySQL
-
-```sql
-CREATE DATABASE todo_app;
-```
-
-### 3. 建立 .env 檔案（放在專案根目錄）
-
-```ini
-DB_HOST=localhost
-DB_USER=你的使用者名稱
-DB_PASSWORD=你的密碼
-DB_NAME=todo_app
-```
-
-### 4. 啟動 Flask 伺服器
-
-```bash
-python app.py
-```
-
-<br>
-
 ##  專案收穫
 
 這個專案是我練習「前後端分離 + 資料庫整合」的一個小作品：
@@ -102,13 +75,49 @@ python app.py
 6. 透過 .env 管理敏感資料，模擬實務部署安全性
 
 7. 本作品已成功部署至 Render，可直接線上體驗使用 ( [ToDo-List](https://to-do-list-web-flask-mysql.onrender.com) )
+> ⚠️ 本專案使用 Render 免費主機與 Railway 雲端 MySQL，首次載入與資料操作會有延遲屬正常現象。（刪除、新增、切換完成)
 
 <br>
 
-##  專案比較
+## 運行專案
 
-- **純前端版本**：這個版本只包含了 HTML/CSS/JS，並不依賴後端伺服器，所有資料是靜態的，並且主要展示前端頁面和互動邏輯。
-  
-- **前後端整合版本**：此版本不僅有前端，還使用 Python（Flask）實作後端來處理動態資料，支援資料儲存、API 請求處理等功能。
+### 1. 安裝檔案
 
-- **前後端整合 + MySQL 版本** (本專案)：加入了 MySQL 資料庫來儲存任務資料。使用者的任務資料會持久儲存在資料庫中，即便重啟伺服器也不會消失，也可以支援跨裝置同步。
+```bash
+git clone https://github.com/harvey0521/To-Do-List-Web-Flask-MySQL.git
+```
+
+### 2. 建立 & 啟用虛擬環境
+
+```bash
+cd todo-list
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+### 3. 安裝相依套件
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. 設定 MySQL
+
+```sql
+CREATE DATABASE todo_app;
+```
+
+### 5. 建立 .env 檔案（放在專案根目錄）
+
+```ini
+DB_HOST=localhost
+DB_USER=你的使用者名稱
+DB_PASSWORD=你的密碼
+DB_NAME=todo_app
+```
+
+### 5. 啟動 Flask 伺服器
+
+```bash
+python app.py
+```
