@@ -25,6 +25,9 @@
 - **Render**：使用 Render 雲端部屬
 
 - **Railway**：提供雲端 MySQL 資料庫服務
+### 部屬連結
+   [ToDo-List-web-app](https://to-do-list-web-flask-mysql.onrender.com) 
+>⚠️本專案使用 Render 免費主機與 Railway 雲端 MySQL，首次載入與資料操作會有延遲屬正常現象。（刪除、新增、切換完成)
 
 <br>
 
@@ -74,8 +77,8 @@
   
 6. 透過 .env 管理敏感資料，模擬實務部署安全性
 
-7. 本作品已成功部署至 Render，可直接線上體驗使用 ( [ToDo-List](https://to-do-list-web-flask-mysql.onrender.com) )
-> ⚠️ 本專案使用 Render 免費主機與 Railway 雲端 MySQL，首次載入與資料操作會有延遲屬正常現象。（刪除、新增、切換完成)
+7. 本作品已成功部署至 Render，可直接線上體驗使用 ( [ToDo-List-web-app](https://to-do-list-web-flask-mysql.onrender.com) )
+
 
 <br>
 
