@@ -87,11 +87,11 @@ python app.py
 
 4. 練習使用 Flask 作為 Web 應用程式框架，理解路由與 HTTP 方法
 
-5. 加上登入代號功能，讓使用者可以跨裝置管理同一組任務資料
+5. 加上登入稱號功能，讓使用者可以跨裝置管理同一組任務資料
   
 6. 透過 .env 管理敏感資料，模擬實務部署安全性
 
-7. 本專案已成功部署至 Render，可直接線上體驗使用
+7. 本作品已成功部署至 Render，可直接線上體驗使用 ( [ToDo-List](https://to-do-list-web-flask-mysql.onrender.com) )
 
 <br>
 
