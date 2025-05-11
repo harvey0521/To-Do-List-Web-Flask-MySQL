@@ -59,7 +59,7 @@ def get_tasks(id):
     cursor.execute('''
     SELECT * FROM tasks
     WHERE user_id = %s
-    ''', (id,))   #不管使用者 id 輸入什麼，系統會把它當作資料，不會被執行成 SQL 指令
+    ''', (id,))   # %s, (id,) 不管使用者 id 輸入什麼，系統會把它當作資料，不會被執行成 SQL 指令
     tasks = cursor.fetchall()  #取得所有符合條件的任務
     cursor.close()
     conn.close()
