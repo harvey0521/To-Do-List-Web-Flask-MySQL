@@ -93,7 +93,7 @@ git clone https://github.com/harvey0521/To-Do-List-Web-Flask-MySQL.git
 ### 2. 建立 & 啟用虛擬環境
 
 ```bash
-cd todo-list
+cd To-Do-List-Web-Flask-MySQL
 python -m venv venv
 .\venv\Scripts\activate
 ```
