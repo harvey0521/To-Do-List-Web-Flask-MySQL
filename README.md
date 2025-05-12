@@ -1,4 +1,4 @@
-# **待辦清單 To-Do List Web App (Flask+MySQL)**
+# **待辦清單 To-Do List Web App ( Flask+MySQL )**
 
 這是一個 To-Do List 專案練習的完整版本，包含前端和後端整合。
 
