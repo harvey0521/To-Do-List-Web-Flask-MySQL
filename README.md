@@ -27,7 +27,7 @@
 - **Railway**：提供雲端 MySQL 資料庫服務
 ### 部屬連結
    [ToDo-List-web-app](https://to-do-list-web-flask-mysql.onrender.com) 
->⚠️本專案使用 Render 免費主機與 Railway 雲端 MySQL，首次載入與資料操作會有延遲屬正常現象。（刪除、新增、切換完成)
+>⚠️本作品使用 Render 免費主機與 Railway 雲端 MySQL，首次載入與資料操作會有延遲屬正常現象。（刪除、新增、切換完成)
 
 <br>
 
