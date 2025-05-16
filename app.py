@@ -14,7 +14,7 @@ def get_db():
     mysql_url = os.getenv("DB_URL")
 
     if mysql_url:
-        print("👉 使用遠端資料庫")
+        print("👉 使用雲端資料庫")
         # 如果 DB_URL 存在，則解析 DB_URL 並連接雲端資料庫
         parsed_url = urlparse(mysql_url)
         return mysql.connector.connect(
@@ -66,12 +66,7 @@ def login():
 #取得(用user_id)
 @app.route('/tasks/<id>', methods = ['GET']) 
 def get_tasks(id):
-    
-    try:
-        conn = get_db()
-    except Exception as e:
-        print(f"Database connection error: {e}")
-        return jsonify({"error": "Database connection error"}), 500
+    conn = get_db()
     conn = get_db()
     cursor = conn.cursor(dictionary=True)
     cursor.execute('''
