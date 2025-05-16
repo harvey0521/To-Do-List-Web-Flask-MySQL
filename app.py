@@ -67,7 +67,6 @@ def login():
 @app.route('/tasks/<id>', methods = ['GET']) 
 def get_tasks(id):
     conn = get_db()
-    conn = get_db()
     cursor = conn.cursor(dictionary=True)
     cursor.execute('''
     SELECT * FROM tasks
